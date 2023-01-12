@@ -1,0 +1,18 @@
+{
+    "user" {
+        "cacheGeheugen":{
+            "niet ingelogd"
+        },
+
+        "Database": {
+            "Ingelogd"
+        },
+
+        "countListTags": [{rock, 100}, {blablabla; 20}]
+    }
+
+    "Track":{
+        "id": 1,
+        "tag": ["rock", "blabla"]
+    }
+}

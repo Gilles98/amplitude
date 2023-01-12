@@ -1,0 +1,31 @@
+<ion-header class="nav">
+  <ion-item color="dark">
+    <ion-grid>
+      <ion-row>
+          <ion-col size="3">
+            <img src="https://amplitude.fm/wp-content/uploads/2022/11/Amplitude-2022-Light-.png"/>
+          </ion-col>
+          <ion-col size="5" >
+            <ion-item color="light" style=" border-radius: 2rem; border: none;" lines="none">
+              <ion-label position="floating">Search track</ion-label>
+              <ion-input [(ngModel)]="input" name="searchSong"></ion-input>
+      <ion-icon name="Search" slot="start"></ion-icon>
+      <ion-spinner *ngIf="input !== ''" slot="end" name="circular"></ion-spinner>
+            </ion-item>
+
+          </ion-col>
+          <ion-col size="4">
+            <div class="topnav">
+              <a class="active" href="#home">Store</a>
+              <a href="#news">Services</a>
+              <a href="#contact">Our platform( dropdown )</a>
+              <a href=""><ion-icon name="person" style="border: 1px solid white; border-radius: 100%; padding: 3px;"></ion-icon></a>
+            </div>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+
+</ion-header>
+

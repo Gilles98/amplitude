@@ -1,0 +1,66 @@
+<app-menu></app-menu>
+<app-shopping-info [tracks]="SelectList"></app-shopping-info>
+<ion-content [fullscreen]="true" style="margin-top: 1em;" id="main">
+
+  <ion-grid>
+<ion-row>
+    <strong>this is a test page for creating the right components</strong>
+</ion-row>
+<ion-row>
+  <ion-col size="4" *ngFor="let item of startNav">
+    <ion-card routerLinkActive="#first" style="background: rgb(2,0,36);
+    background: linear-gradient(30deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 65%, rgba(97,102,103,1) 99%);">
+    <div style=" width: 80%;
+    margin: auto; text-align: center;">
+
+
+      <ion-icon color="primary" name={{item.src}}></ion-icon>
+      <ion-card-header style="color:white">{{item.title}}</ion-card-header>
+      <ion-card-content style="color:white">{{item.descr}}</ion-card-content>
+    </div> </ion-card>
+
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col *ngFor="let track of Dummy" size="3">
+  <ion-card >
+    <img alt="Silhouette of mountains" src="../../assets/download.png" width="100%"/>
+    <ion-card-header>
+      <ion-card-title>Track :{{track.trackInfo.name}}</ion-card-title>
+      <ion-card-subtitle>info (to be changed) <p>duration: {{track.trackInfo.duration}} - by {{track.trackInfo.artist.naam}}</p>
+    </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button style="border-radius:50% ;" (click)="addTotal(track)">buy</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+<!--
+  -->
+  </ion-row><div style="background-color: black; margin-left: -1%; margin-right: -1%; margin-bottom: -1%;">
+  <ion-row>
+
+
+    <div style="margin: 1.2em;">
+      <h1 id="first" style="color: white; margin: 1em; -webkit-font-smoothing: antialiased;">All genres on our platform.<br>
+        Ready to be discovered.</h1>
+
+   <span *ngFor="let item of genres" style="margin: 0.5em;">
+    <ion-badge  (click)=" changeColor($event)" style=" padding:0.5em; border:1px solid gray" color="dark">{{item}}</ion-badge></span>
+  </div>
+
+  </ion-row>
+</div>
+</ion-grid>
+
+<ion-fab  slot="fixed" vertical="bottom" horizontal="end">
+
+  <ion-badge  color="danger">{{basketItemsTotal}}</ion-badge>
+  <ion-fab-button style="margin-top: 0;" color="light" (click)="openMenu()">
+        <ion-icon color="dark" size="medium" name="basket"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+</ion-content>
